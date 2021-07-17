@@ -16,15 +16,11 @@ const images = [
 const imagesList = document.querySelector('#gallery');
 
 const listElement = images.map(imageSrc => {
-  const iamgesListElement = document.createElement('li');
-
-  iamgesListElement.insertAdjacentHTML(
-    'afterbegin',
-    `<li class="gallery__list-item"><img src="${imageSrc.url}" alt="${imageSrc.alt}" width=180 height=120 </li>`,
-  );
-  return iamgesListElement;
+  return `<li class="gallery__list-item"><img src="${imageSrc.url}" alt="${imageSrc.alt}" width=180 height=120 </li>`;
 });
-imagesList.append(...listElement);
+
+imagesList.insertAdjacentHTML('beforeend', listElement.join(' '));
+
 imagesList.setAttribute(
   'style',
   'list-style:none; display: flex; justify-content: space-around;',
