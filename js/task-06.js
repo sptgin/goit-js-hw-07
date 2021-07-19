@@ -1,5 +1,4 @@
 const inputValidation = document.querySelector('#validation-input');
-console.log(inputValidation);
 inputValidation.addEventListener('input', event => {
   inputValidation.value.length ===
   Number(inputValidation.getAttribute('data-length'))
