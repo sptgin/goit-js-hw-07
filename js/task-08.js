@@ -20,11 +20,11 @@ function createBoxes(amount) {
   const boxesElements = document.querySelector('#boxes');
   for (let i = 0; i < amount; i += 1) {
     boxesElement.push(
-      `<div style="background-color: #${Math.floor(
-        Math.random() * 16777215,
-      ).toString(16)}; width: ${30 + i * 10}px; height: ${
-        30 + i * 10
-      }px"></div>`,
+      `<div style="background-color: rgb(${Math.floor(
+        Math.random() * 255 + 1,
+      )}, ${Math.floor(Math.random() * 255 + 1)}, ${Math.floor(
+        Math.random() * 255 + 1,
+      )}); width: ${30 + i * 10}px; height: ${30 + i * 10}px"></div>`,
     );
   }
   boxesElements.insertAdjacentHTML('beforeend', boxesElement.join(' '));
