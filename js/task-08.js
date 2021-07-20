@@ -12,15 +12,13 @@ boxesControlsRenderButton.addEventListener('click', event => {
   createBoxes(boxesControlsInput.valueAsNumber);
 });
 boxesControlsDestroyButton.addEventListener('click', event => {
-  console.log('---');
+  destroyBoxes();
 });
 
 function createBoxes(amount) {
-  console.log('+++' + amount);
   const boxesElement = [];
   const boxesElements = document.querySelector('#boxes');
   for (let i = 0; i < amount; i += 1) {
-    console.log(i);
     boxesElement.push(
       `<div style="background-color: #${Math.floor(
         Math.random() * 16777215,
@@ -30,4 +28,11 @@ function createBoxes(amount) {
     );
   }
   boxesElements.insertAdjacentHTML('beforeend', boxesElement.join(' '));
+}
+
+function destroyBoxes() {
+  const boxesElements = document.querySelector('#boxes');
+  while (boxesElements.firstChild) {
+    boxesElements.removeChild(boxesElements.firstChild);
+  }
 }
