@@ -12,6 +12,7 @@ boxesControlsRenderButton.addEventListener('click', event => {
   createBoxes(boxesControlsInput.valueAsNumber);
 });
 boxesControlsDestroyButton.addEventListener('click', event => {
+  boxesControlsInput.value = 0;
   destroyBoxes();
 });
 
